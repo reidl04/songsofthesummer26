@@ -6,23 +6,20 @@
 // ------------------------------------------------------------------
 
 :root {
-  --color-ocean: #00b4d8;
-  --color-ocean-deep: #0077b6;
+   --color-background: #fff6e5;
+  --color-ocean: #0077b6;
+  --color-ocean-dark: #123544;
+  --color-accent: #ff6b5b;
+  --color-highlight: #ffc857;
   --color-lagoon: #90e0ef;
-  --color-sand: #fff6e5;
-  --color-sand-dark: #ffe4ad;
-  --color-coral: #ff6b5b;
-  --color-sun: #ffc857;
-  --color-hibiscus: #ff5da2;
-  --color-ink: #123544;
-  --color-ink-soft: #3c6470;
   --color-white: #ffffff;
-
+  --color-muted: #3c6470;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-display: Georgia, "Times New Roman", serif;
 
-  --radius: 20px;
-  --shadow: 0 10px 30px rgba(18, 53, 68, 0.12);
+   --radius: 12px;
+  --radius-round: 999px;
+  --shadow: 0 6px 18px rgba(18, 53, 68, 0.12);
 }
 
 * { box-sizing: border-box; }
@@ -33,17 +30,58 @@ html, body {
 }
 
 body {
+  background: var(--color-background);
+  color: var(--color-ocean-dark);
   font-family: var(--font-body);
-  font-weight: 500;
-  color: var(--color-ink);
-  background-color: var(--color-sand);
-  background-image:
-    radial-gradient(circle at 6% 12%, color-mix(in srgb, var(--color-sun) 35%, transparent) 0, transparent 40%),
-    radial-gradient(circle at 94% 30%, color-mix(in srgb, var(--color-ocean) 18%, transparent) 0, transparent 45%),
-    radial-gradient(circle at 50% 90%, color-mix(in srgb, var(--color-coral) 12%, transparent) 0, transparent 40%);
-  background-attachment: fixed;
-  line-height: 1.6;
-  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-ocean-dark);
+  font-family: var(--font-display);
+}
+
+.radio-card,
+.song-card,
+.now-playing {
+  background: var(--color-white);
+  border: 2px solid var(--color-lagoon);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.radio-card {
+  border-top: 6px solid var(--color-accent);
+}
+
+.play-button {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius-round);
+  background: var(--color-ocean);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background: var(--color-accent);
+}
+
+.song-number,
+.track-label {
+  color: var(--color-ocean);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wave-divider {
+  height: 24px;
+  background: var(--color-ocean);
+  border-radius: 50% 50% 0 0;
 }
 
 a {
